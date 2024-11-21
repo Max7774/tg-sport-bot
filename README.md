@@ -1,73 +1,107 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+```markdown
+# Telegram Бот для Занятий Спортом
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![Логотип](https://your-logo-url.com/logo.png)
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📖 Описание
 
-## Description
+Добро пожаловать в проект **Telegram Бот для Занятий Спортом**! Этот бот создан, чтобы помочь вам планировать тренировки, следить за своим прогрессом и достигать новых спортивных высот прямо через Telegram.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🚀 Функционал
 
-## Installation
+- **Персональные тренировки**: Получайте индивидуальные программы тренировок на основе ваших целей и уровня подготовки.
+- **Отслеживание прогресса**: Сохраняйте результаты своих тренировок и наблюдайте за улучшениями.
+- **Напоминания**: Устанавливайте напоминания о предстоящих тренировках, чтобы всегда быть в форме.
+- **Советы по питанию**: Получайте рекомендации по здоровому питанию для улучшения результатов.
+- **Сообщество**: Общайтесь с другими пользователями, делитесь успехами и мотивируйте друг друга.
+
+## 🛠 Установка и настройка
+
+### Предварительные требования
+
+- [Node.js](https://nodejs.org/) v14 или выше
+- [npm](https://www.npmjs.com/get-npm) или [yarn](https://yarnpkg.com/)
+- [NestJs CLI](https://docs.nestjs.com/cli/overview) (рекомендуется)
+- Аккаунт в Telegram
+- Токен бота от [@BotFather](https://t.me/BotFather)
+
+### Шаги установки
+
+1. **Клонируйте репозиторий:**
+
+   ```bash
+   git clone https://github.com/ваш_логин/название_репозитория.git
+   ```
+
+2. **Перейдите в директорию проекта:**
+
+   ```bash
+   cd название_репозитория
+   ```
+
+3. **Установите необходимые зависимости:**
+
+   ```bash
+   npm install
+   # или
+   yarn install
+   ```
+
+4. **Настройте переменные окружения:**
+
+   Создайте файл `.env` в корневой директории и добавьте в него ваш токен:
+
+   ```env
+   BOT_TOKEN=ВАШ_ТОКЕН_ОТ_BOTFATHER
+   ```
+
+### Запуск бота
 
 ```bash
-$ yarn install
+# Запуск в режиме разработки
+npm run start:dev
+# или
+yarn start:dev
+
+# Запуск в продакшн режиме
+npm run start
+# или
+yarn start
 ```
 
-## Running the app
+## 📋 Использование
 
-```bash
-# development
-$ yarn run start
+1. **Запустите бота.**
+2. **Найдите своего бота в Telegram** по имени пользователя.
+3. **Начните диалог** командой `/start`.
+4. **Следуйте инструкциям** бота для настройки профиля и начала тренировок.
 
-# watch mode
-$ yarn run start:dev
+## 🤝 Вклад
 
-# production mode
-$ yarn run start:prod
+Мы приветствуем ваш вклад в развитие проекта!
+
+- **Сообщите об ошибке:** Откройте issue в репозитории.
+- **Запросите новую функцию:** Предложите идею через issue.
+- **Сделайте вклад:** Форкните репозиторий, внесите изменения и отправьте pull request.
+
+## 📅 Планы на будущее
+
+- Добавление поддержки новых видов спорта.
+- Интеграция с фитнес-трекерами и приложениями.
+- Разработка веб-интерфейса для расширенного функционала.
+- Запуск мотивационных челленджей и соревнований.
+
+## 📄 Лицензия
+
+Этот проект лицензирован под лицензией MIT. Подробности см. в файле [LICENSE](LICENSE).
+
+## 📧 Контакты
+
+- **Автор:** Ваше Имя
+- **Email:** your.email@example.com
+- **Telegram:** [@your_tg_username](https://t.me/your_tg_username)
+
+---
+
+❤️ **Спасибо за использование нашего бота! Желаем успехов в ваших тренировках!**
 ```
-
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
