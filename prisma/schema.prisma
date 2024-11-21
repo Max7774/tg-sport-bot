@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  uuid             String    @id  @default(uuid())
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+   
+  userId           String    @unique
+  username         String
+  age              Int?
+  weight           Int?
+  skillLevel       EnumSkillLevel
+  trainingFormat   EnumTrainingFormat
+  role             EnumRoleOfUser
+  account          Int     @default(0)
+
+  heath            HeathReport[]
+  food             FoodReport[]
+
+  subscriptionUuid String?
+  subscription     Subscription?    @relation(fields: [subscriptionUuid], references: [uuid])
+}
+
+enum EnumSkillLevel {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum EnumTrainingFormat {
+  STREET
+  HOME
+  GYM
+}
+
+
+model Video {
+  uuid            String    @id  @default(uuid())
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+  
+  title           String
+  description     String?
+  videoData       Bytes
+  
+  muscleGroup     MuscleGroup  @relation(fields: [muscleGroupUuid], references: [uuid])
+  muscleGroupUuid String
+}
+
+model MuscleGroup {
+  uuid      String    @id  @default(uuid())
+
+  name      String   @unique
+  videos    Video[]
+}
+
+model HeathReport {
+  uuid          String       @id  @default(uuid())
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  
+  weight        Int
+  muscle        Int
+  fat           Int
+
+  userUuid      String?
+  user          User?    @relation(fields: [userUuid], references: [uuid])
+}
+
+model FoodReport {
+  uuid          String       @id  @default(uuid())
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  
+  image         String
+  comment       String
+
+  userUuid      String?
+  user          User?    @relation(fields: [userUuid], references: [uuid])
+}
+
+model Subscription {
+  uuid          String   @id @default(uuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userUuid      String   @unique
+  startDate     DateTime @default(now())
+  endDate       DateTime
+  isActive      Boolean  @default(true)
+  level         EnumSubscriptionLevel 
+  paymentLink   String?
+
+  user          User[]
+}
+
+enum EnumSubscriptionLevel {
+  NONE
+  BASIC
+  MEDIUM
+  VIP
+}
+
+enum EnumRoleOfUser {
+  ADMIN
+  DEFAULT_USER
+}
